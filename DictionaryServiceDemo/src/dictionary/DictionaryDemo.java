@@ -3,6 +3,10 @@ package dictionary;
 public class DictionaryDemo {
 	public static void main(String[] args) {
 
+		
+		
+		
+		
 		DictionaryService dictionary = DictionaryService.getInstance();
 		System.out.println(DictionaryDemo.lookup(dictionary, "book"));
 		System.out.println(DictionaryDemo.lookup(dictionary, "editor"));
