@@ -4,6 +4,9 @@ public class Test {
 
 	static class WorkerThread extends Thread {
 
+		
+		
+		
 		@Override
 		public void run() {
 			boolean interrupted = false;
