@@ -1,0 +1,58 @@
+<html>
+<title>Javascript command pattern</title>
+<head>
+
+<script type="text/javascript">
+
+var LightSwitch = function(){
+  var _commands = [];
+  this.storeAndExecute = function(command){
+       _commands.push(command);
+      command.execute();
+  }
+}
+
+var Light = function(){
+    this.turnOn=function(){
+        console.log('this is turn on');
+     }
+    this.turnOff = function(){
+         console.log('this is turn off');
+    }
+}
+
+
+var TurnOnCommand = function(light){
+  this.execute = function(){
+       light.turnOn();
+   }
+}
+
+var TurnOffCommand = function(light){
+   this.execute = function(){
+      light.turnOff();
+   }
+}
+
+
+var lightObj = new Light();
+var switchObj = new LightSwitch();
+var switchOn = new TurnOnCommand(lightObj);
+var switchOff = new TurnOffCommand(lightObj);
+
+
+switchObj.storeAndExecute(switchOn);
+switchObj.storeAndExecute(switchOff);
+
+
+
+
+
+
+</script>
+
+
+</head>
+
+
+</html>
